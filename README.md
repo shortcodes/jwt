@@ -1,14 +1,14 @@
 # jwt
 This is JWT Guard for Laravel Application
 
-#.env
+# .env
 
 To use this package you have to put those variables to your *.env* file
 
-  JWT_SECRET=
-  JWT_TTL=60
-  JWT_REFRESH_TTL=20160
-  JWT_ALGO=HS256
+    JWT_SECRET=
+    JWT_TTL=60
+    JWT_REFRESH_TTL=20160
+    JWT_ALGO=HS256
   
 # auth.php
 
