@@ -19,13 +19,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "shortcodes\\jwt\\JwtServiceProvider"
+                "Shortcodes\\Jwt\\JwtServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "shortcodes\\jwt\\": "src/"
+            "Shortcodes\\Jwt\\": "src/"
         }
     }
 }
