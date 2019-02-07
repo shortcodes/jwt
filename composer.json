@@ -1,5 +1,5 @@
 {
-    "name": "Shortcodes/Jwt",
+    "name": "shortcodes/jwt",
     "description": "This is JWT Guard for Laravel Application",
     "type": "package",
     "require": {
@@ -19,13 +19,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Shortcodes\\Jwt\\JwtServiceProvider"
+                "shortcodes\\jwt\\JwtServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Shortcodes\\Jwt\\": "src/"
+            "shortcodes\\jwt\\": "src/"
         }
     }
 }
