@@ -1,0 +1,31 @@
+{
+    "name": "Shortcodes/Jwt",
+    "description": "This is JWT Guard for Laravel Application",
+    "type": "package",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Roman Szymanski",
+            "email": "roman.szymanski@shortcodes.pl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "firebase/php-jwt": "^5.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shortcodes\\Jwt\\JwtServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Shortcodes\\Jwt\\": "src/"
+        }
+    }
+}
