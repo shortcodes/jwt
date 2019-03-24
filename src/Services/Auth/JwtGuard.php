@@ -60,6 +60,23 @@ class JwtGuard implements Guard
         return null;
     }
 
+    public function getUserFromToken($token)
+    {
+        try {
+
+            $decoded = JWT::decode($token, env("JWT_SECRET"), [env("JWT_ALGO")]);
+
+            $user = User::find($decoded->user_id);
+            $this->setUser($user);
+            return $user;
+
+        } catch (\Exception $e) {
+            Log::info('Provided token is incorrect : ' . $e->getMessage());
+        }
+
+        return null;
+    }
+
     /**
      * Validate a user's credentials.
      *
@@ -119,9 +136,9 @@ class JwtGuard implements Guard
         return !is_null($user) && $this->provider->validateCredentials($user, $credentials);
     }
 
-    public function generateJwtTokenForUser(Authenticatable $authenticable)
+    public function generateJwtTokenForUser(Authenticatable $authenticable, $remember = false)
     {
-        return $this->geterateJwtToken($authenticable);
+        return $this->geterateJwtToken($authenticable,$remember);
     }
 
     protected function geterateJwtToken($user, $rememberMe = null)
